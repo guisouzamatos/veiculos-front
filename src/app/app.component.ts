@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {CarService} from "./component/car/car.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'veiculos-front';
 }
