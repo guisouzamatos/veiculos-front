@@ -9,6 +9,7 @@ import {AddcarComponent} from "./component/car/add-car/addcar.component";
 import { AddBrandComponent } from './component/brand/add-brand/add-brand.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CarService} from "./component/car/car.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {CarService} from "./component/car/car.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
   ],
   providers: [CarService],
