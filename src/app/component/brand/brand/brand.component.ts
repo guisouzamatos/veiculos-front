@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BrandService} from "../brand.service";
 
 @Component({
   selector: 'app-brand',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrandComponent implements OnInit {
 
-  constructor() { }
+  public list: Array<any> = [];
 
-  ngOnInit(): void {
+  constructor(private service: BrandService) {
   }
 
+  ngOnInit(): void {
+    this.list = [];
+    this.getAll();
+  }
+
+  public getAll() {
+    this.service.getAll().subscribe(it =>{
+      this.list = it;
+    });
+  }
+
+  public getById(id:Number){
+    this.service.getById(id).subscribe(it =>{
+      console.log(it);
+      return it;
+    })
+  }
+
+  public post(brand:any){
+    this.service.post(brand);
+  }
 }

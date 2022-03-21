@@ -1,1 +1,21 @@
-<p>brand works!</p>
+<body>
+<div>
+  <button class="botao" [routerLink]="['/marca/add']">Adicionar Marca</button>
+</div>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th class="column">Nome</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let brand of list">
+      <!--    <td>{{car.id}}</td> -->
+      <td class="data">{{brand.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+

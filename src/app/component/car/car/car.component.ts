@@ -9,19 +9,36 @@ import {BrandService} from "../../brand/brand.service";
 })
 export class CarComponent implements OnInit {
 
-  public getAll: Array<any> = [];
+  public list: Array<any> = [];
 
-  constructor(private service: CarService, private brandService: BrandService) {
+  constructor(private service: CarService) {
   }
 
   ngOnInit(): void {
-    this.listaCarros();
+    this.getAll();
   }
 
-
-  public listaCarros() {
-    this.service.buscarTodos().subscribe(it =>{
-      this.getAll = it;
+  public getAll() {
+    this.service.getAll().subscribe(it =>{
+      this.list = [];
+      this.list = it;
     });
   }
+
+  public getById(id:Number){
+    this.service.getById(id).subscribe(it =>{
+      return it;
+    })
+  }
+
+  public delete(id:Number){
+    this.service.delete(id).subscribe();
+  }
+
+  public post(car:any){
+    this.post(car);
+  }
+
+
+
 }

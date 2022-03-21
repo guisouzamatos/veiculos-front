@@ -9,11 +9,15 @@ export class BrandService {
 
   constructor(private http: HttpClient) { }
 
-  public buscarTodos(){
-    return this.http.get<any>(apiUrl.url.concat("/car/get-all"));
+  public getAll(){
+    return this.http.get<any>(apiUrl.url.concat("/brand/get-all"));
   }
 
-  public buscarPorId(id:Number){
-    return this.http.get<any>(apiUrl.url.concat("/brand/get-by-id/{id}"));
+  public getById(id:Number){
+    return this.http.get<any>(apiUrl.url.concat(`/brand/get-by-id/${id}`));
+  }
+
+  public post(brand:any){
+    return this.http.post(apiUrl.url.concat("/brand/post"),brand);
   }
 }

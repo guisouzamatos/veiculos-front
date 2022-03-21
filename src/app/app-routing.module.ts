@@ -6,7 +6,7 @@ import {AddcarComponent} from "./component/car/add-car/addcar.component";
 import {AddBrandComponent} from "./component/brand/add-brand/add-brand.component";
 
 const routes: Routes = [
-  { path: 'carro', component: CarComponent },
+  { path: '', component: CarComponent },
   { path: 'carro/add', component: AddcarComponent },
   { path: 'marca', component: BrandComponent },
   { path: 'marca/add', component: AddBrandComponent },

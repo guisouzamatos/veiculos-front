@@ -1,11 +1,32 @@
 <body>
-<ol >
-  <li *ngFor="let car of getAll">
-    {{car.name}}
-    {{car.model}}
-    {{car.year}}
-    {{car.color}}
-    {{car.category}}
-  </li>
-</ol>
+<div>
+  <button class="botao" [routerLink]="['/carro/add']">Adicionar Carro</button>
+</div>
+<div class="container">
+<table class="table">
+  <thead>
+  <tr>
+    <th class="column">Nome</th>
+    <th class="column">Modelo</th>
+    <th class="column">Ano</th>
+    <th class="column">Cor</th>
+    <th class="column">Categoria</th>
+    <th class="column">Deletar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let car of list">
+<!--    <td>{{car.id}}</td> -->
+    <td class="data">{{car.name}}</td>
+    <td class="data">{{car.model}}</td>
+    <td class="data">{{car.year}}</td>
+    <td class="data">{{car.color}}</td>
+    <td class="data">{{car.category}}</td>
+    <td class="data">
+      <button class="botaoDelete" (click)="delete(car.id)">Deletar</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
 </body>

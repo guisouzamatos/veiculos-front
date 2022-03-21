@@ -10,6 +10,8 @@ import { AddBrandComponent } from './component/brand/add-brand/add-brand.compone
 import {HttpClientModule} from "@angular/common/http";
 import {CarService} from "./component/car/car.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from "@angular/material/table";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatTableModule
 
   ],
   providers: [CarService],
