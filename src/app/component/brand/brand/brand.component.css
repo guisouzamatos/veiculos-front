@@ -3,17 +3,21 @@
   width: 100%;
   border: 1px solid red;
 }
-.container{
+
+.container {
   border: 20px;
 }
-.data{
+
+.data {
   text-align: center;
   border-left: 1px solid red;
   border-top: 1px solid red;
 }
-.column{
+
+.column {
   border-left: 1px solid red;
 }
+
 .botao {
   background-color: cornflowerblue;
   border-radius: 5px;
@@ -30,12 +34,13 @@
   margin-left: 10px;
   transition: background .6s ease-in, transform .01s .05s ease-in-out;
 }
+
 .botao:active {
   background-color: #c61140;
   transform: scale(1.01) rotateX(5deg);
 }
 
-.botaoDelete{
+.botaoDelete {
   background-color: cornflowerblue;
   border-radius: 8px;
   border-width: 0;
@@ -56,6 +61,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
 .botaoDelete:active {
   background-color: #c61140;
   transform: scale(1.01) rotateX(5deg);

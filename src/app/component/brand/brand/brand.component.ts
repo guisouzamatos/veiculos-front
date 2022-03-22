@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BrandService} from "../brand.service";
 
 @Component({
@@ -16,22 +16,22 @@ export class BrandComponent implements OnInit {
   ngOnInit(): void {
     this.list = [];
     this.getAll();
+
   }
 
   public getAll() {
-    this.service.getAll().subscribe(it =>{
+    this.service.getAll().subscribe(it => {
       this.list = it;
     });
   }
 
-  public getById(id:Number){
-    this.service.getById(id).subscribe(it =>{
-      console.log(it);
+  public getById(id: Number) {
+    this.service.getById(id).subscribe(it => {
       return it;
     })
   }
 
-  public post(brand:any){
-    this.service.post(brand);
+  public delete(id: Number) {
+    this.service.delete(id).subscribe();
   }
 }

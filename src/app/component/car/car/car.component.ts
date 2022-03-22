@@ -3,15 +3,13 @@ import {CarService} from "../car.service";
 import {BrandService} from "../../brand/brand.service";
 
 @Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  selector: 'app-car', templateUrl: './car.component.html', styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
 
   public list: Array<any> = [];
 
-  constructor(private service: CarService) {
+  constructor(private service: CarService, private brandService: BrandService) {
   }
 
   ngOnInit(): void {
@@ -19,26 +17,30 @@ export class CarComponent implements OnInit {
   }
 
   public getAll() {
-    this.service.getAll().subscribe(it =>{
+    this.service.getAll().subscribe(res => {
+      res.forEach((it: any) => {
+        this.brandService.getById(it.brandId).subscribe(res => {
+          it.brandId = res.name;
+        })
+      });
       this.list = [];
-      this.list = it;
+      this.list = res;
     });
   }
 
-  public getById(id:Number){
-    this.service.getById(id).subscribe(it =>{
-      return it;
+  public getById(id: Number) {
+    this.service.getById(id).subscribe(res => {
+      return res;
     })
   }
 
-  public delete(id:Number){
+  public delete(id: Number) {
     this.service.delete(id).subscribe();
   }
 
-  public post(car:any){
-    this.post(car);
+  public post(car: any) {
+    this.service.post(car);
   }
-
 
 
 }

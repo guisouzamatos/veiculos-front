@@ -7,12 +7,16 @@
     <thead>
     <tr>
       <th class="column">Nome</th>
+      <th class="column">Deletar</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let brand of list">
-      <!--    <td>{{car.id}}</td> -->
+      <!-- <td class="data">{{brand.id}}</td> -->
       <td class="data">{{brand.name}}</td>
+      <!-- <td class="data">
+         <button class="botaoDelete" (click)="delete(brand.id)">Deletar</button>
+       </td> -->
     </tr>
     </tbody>
   </table>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BrandService} from "../brand.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-brand',
@@ -11,18 +12,20 @@ export class AddBrandComponent implements OnInit {
 
   formulario!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private service:BrandService) { }
+  constructor(private formBuilder: FormBuilder, private service: BrandService, private router: Router) {
+  }
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
-      name: [null]
+      name: [null, Validators.required]
     });
 
   }
 
-  onSubmit(){
-    if (this.formulario.value.name != null){
+  onSubmit() {
+    if (this.formulario.value.name != null) {
       this.service.post(this.formulario.value).subscribe();
+      this.router.navigate(['/marca']);
     }
   }
 }

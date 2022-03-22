@@ -11,6 +11,7 @@
     <th class="column">Ano</th>
     <th class="column">Cor</th>
     <th class="column">Categoria</th>
+    <th class="column">Marca</th>
     <th class="column">Deletar</th>
   </tr>
   </thead>
@@ -22,6 +23,7 @@
     <td class="data">{{car.year}}</td>
     <td class="data">{{car.color}}</td>
     <td class="data">{{car.category}}</td>
+    <td class="data">{{car.brandId}}</td>
     <td class="data">
       <button class="botaoDelete" (click)="delete(car.id)">Deletar</button>
     </td>
