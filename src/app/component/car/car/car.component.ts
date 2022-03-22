@@ -35,7 +35,9 @@ export class CarComponent implements OnInit {
   }
 
   public delete(id: Number) {
-    this.service.delete(id).subscribe();
+    this.service.delete(id).subscribe(res=>{
+      console.log(id);
+    });
   }
 
   public post(car: any) {

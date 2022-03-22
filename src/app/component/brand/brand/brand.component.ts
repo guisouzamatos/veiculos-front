@@ -22,6 +22,7 @@ export class BrandComponent implements OnInit {
   public getAll() {
     this.service.getAll().subscribe(it => {
       this.list = it;
+      console.log(it);
     });
   }
 

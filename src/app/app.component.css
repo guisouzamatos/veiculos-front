@@ -8,6 +8,7 @@
   background-color: cornflowerblue;
   margin: -10px;
 }
+
 .botao {
   background-color: white;
   border-radius: 8px;
@@ -24,10 +25,11 @@
   text-align: center;
   transition: all 200ms;
 }
-.botao:active{
+
+.botao:active {
   background-color: #bac8e5;
 }
 
-router-outlet{
+router-outlet {
   padding: 10px;
 }
