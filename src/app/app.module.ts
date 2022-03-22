@@ -10,7 +10,6 @@ import {AddBrandComponent} from './component/brand/add-brand/add-brand.component
 import {HttpClientModule} from "@angular/common/http";
 import {CarService} from "./component/car/car.service";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTableModule} from "@angular/material/table";
 import {ReactiveFormsModule} from "@angular/forms";
 
 
@@ -28,8 +27,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatTableModule
-
   ],
   providers: [CarService],
   bootstrap: [AppComponent]
